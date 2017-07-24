@@ -1,11 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-
-import 'rxjs/add/operator/startWith';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/observable/of';
-
-import { Observable } from 'rxjs/Observable';
 
 import {ElementTypeService} from '../services/element-type.service';
 import { ElementType } from '../models/element-type';

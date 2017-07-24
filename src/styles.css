@@ -1,7 +1,10 @@
-/*@import '~@angular/material/prebuilt-themes/indigo-pink.css';*/
-
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
+}
+body {
+  width: 800px;
+  border: 2px solid black;
+  min-height: 800px;
 }

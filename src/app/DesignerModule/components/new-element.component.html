@@ -1,23 +1,19 @@
-<div>
-    <md-card>
+    <md-card style="margin: 25px;">
         <md-card-header>
             <md-card-title>
-                Add New Form form-element-list
+                <h2>Add new element</h2>
             </md-card-title>
-            <md-card-subtitle>
-                Please select type of the question and hit OK
-            </md-card-subtitle>
         </md-card-header>
         <md-card-content>
-            <form>
-                <md-select placeholder="Available Types" [(ngModel)]="selectedType" name="type">
+            <form style="margin-top: 10pt">
+                <md-select style="width: 60%" placeholder="Element type" [(ngModel)]="selectedType" name="type">
                     <md-option *ngFor="let type of availableTypes" [value]="type">
                         {{type.name}}
                     </md-option>
                 </md-select>
-
-                <button md-mini-fab><md-icon>check</md-icon></button>
             </form>
         </md-card-content>
+        <md-card-actions>
+            <button md-button>Add</button>
+        </md-card-actions>
     </md-card>
-</div>

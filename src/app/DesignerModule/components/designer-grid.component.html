@@ -1,9 +1,19 @@
-<div style="display: flex;flex-flow: row wrap; justify-content:center"> 
+<div style="display: flex;flex-flow: row wrap;  align-items: stretch;justify-content:center">
 
-    <new-element style="flex:0.5 100%;"></new-element>
+    <md-toolbar color="primary">
+        <span>Zalko Test Designer</span>
+    </md-toolbar>
 
-    <form-header style="flex:1 100%"></form-header>
+    <form-settings style="flex:1 100%;"></form-settings>
+    
+    <new-element style="flex:1 10%;"></new-element>
 
-    <form-element-list style="flex:1 100%"> </form-element-list>
+    <div style="flex:1 100%">
+        <form-header></form-header>
+    </div>
+
+    <div style="flex:1 100%">
+        <form-element-list> </form-element-list>
+    </div>
 
 </div>
