@@ -1,0 +1,23 @@
+<div>
+    <md-card>
+        <md-card-header>
+            <md-card-title>
+                Add New Form form-element-list
+            </md-card-title>
+            <md-card-subtitle>
+                Please select type of the question and hit OK
+            </md-card-subtitle>
+        </md-card-header>
+        <md-card-content>
+            <form>
+                <md-select placeholder="Available Types" [(ngModel)]="selectedType" name="type">
+                    <md-option *ngFor="let type of availableTypes" [value]="type">
+                        {{type.name}}
+                    </md-option>
+                </md-select>
+
+                <button md-mini-fab><md-icon>check</md-icon></button>
+            </form>
+        </md-card-content>
+    </md-card>
+</div>
