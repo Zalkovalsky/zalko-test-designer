@@ -20,6 +20,7 @@ import { FormHeaderComponent } from './components/form-header.component';
 import { FormElementListComponent } from './components/form-element-list.component';
 import { DesignerGridComponent } from './components/designer-grid.component';
 import { FormSettingsComponent } from './components/form-settings.component';
+import { EditableTextComponent } from './components/editable-text.component';
 import { ElementTypeService } from './services/element-type.service';
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ElementTypeService } from './services/element-type.service';
         FormElementListComponent,
         FormHeaderComponent,
         DesignerGridComponent,
-        FormSettingsComponent
+        FormSettingsComponent,
+        EditableTextComponent
     ],
     bootstrap: [
         NewElementComponent

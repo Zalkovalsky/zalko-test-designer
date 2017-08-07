@@ -1,0 +1,14 @@
+#designer_grid_container{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content:center;
+}
+#designer_form_container {
+    flex:1 100%;
+    border: 1pt dashed black;
+    margin: 25px
+}
+.designer_card_container {
+    flex: 1 50%;
+}
