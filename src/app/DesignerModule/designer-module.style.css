@@ -12,3 +12,11 @@
 .designer_card_container {
     flex: 1 50%;
 }
+
+/* Editable text component */
+.editable-text{
+    border-bottom: 1pt dashed cornflowerblue;
+}
+.editable-text:hover{
+    color: cornflowerblue;
+}

@@ -23,6 +23,9 @@ import { FormSettingsComponent } from './components/form-settings.component';
 import { EditableTextComponent } from './components/editable-text.component';
 import { ElementTypeService } from './services/element-type.service';
 
+import { ShortTextQuestionComponent } from './components/questions/short-text-question.component';
+import { SingleSelectionQuestionComponent } from './components/questions/single-selection-question.component';
+
 @NgModule({
     imports: [
         FormsModule,
@@ -45,7 +48,9 @@ import { ElementTypeService } from './services/element-type.service';
         FormHeaderComponent,
         DesignerGridComponent,
         FormSettingsComponent,
-        EditableTextComponent
+        EditableTextComponent,
+        ShortTextQuestionComponent,
+        SingleSelectionQuestionComponent
     ],
     bootstrap: [
         NewElementComponent
