@@ -1,14 +1,14 @@
 import {Component, Input} from '@angular/core';
-
-export class BaseQuestionComponent {
-    @Input() questionText: string;
-    @Input() questionNumber: number;
-}
+import { DynamicField } from './../../models/dynamic-field.interface';
+import { BaseElement } from './../../models/base-element';
+import { FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'short-text-question',
     templateUrl: './short-text-question.component.html'
 })
-export class ShortTextQuestionComponent extends BaseQuestionComponent {
+export class ShortTextQuestionComponent implements DynamicField {
+    element: BaseElement;
+    formGroup: FormGroup;
 }
 

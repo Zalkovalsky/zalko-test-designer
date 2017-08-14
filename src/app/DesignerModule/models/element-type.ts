@@ -1,8 +1,6 @@
-interface IMovable {
-    row: number;
-    column: number;
-}
-
-export class ElementType {
-    constructor(public name: string) {}
+export enum ElementType {
+    ShortText = 'Short Text',
+    SingleSelection = 'Single Selection',
+    FormSentence = 'Form Sentence',
+    FillUpBlanks = 'Fill Up Blanks'
 }

@@ -8,8 +8,8 @@ import { ElementType } from '../models/element-type';
     templateUrl: './new-element.component.html'
 })
 export class NewElementComponent implements OnInit {
-    availableTypes: ElementType[];
-    selectedType: ElementType;
+    availableTypes: string[];
+    selectedType: string;
 
     constructor(private elementTypeService: ElementTypeService) {
     }

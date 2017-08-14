@@ -1,13 +1,13 @@
 <div style="margin:5pt">
     <div>
-        <span>{{questionNumber}}.</span>
+        <span>{{element.questionId}}.</span>
         <div style="display: inline-block">
-            <editable-text [value]="questionText" [placeholderText]="'Enter the question title'"></editable-text>
+            <editable-text [value]="element.questionText" [placeholderText]="'Enter the question title'"></editable-text>
             <button md-button (click)="pushOption()">Add</button>
         </div>
     </div>
     <ol style="list-style: lower-latin">
-        <li *ngFor="let option of options">
+        <li *ngFor="let option of element.options">
             <editable-text [value]="option" [placeholderText]="'Please enter option text'"></editable-text>
         </li>
     </ol>

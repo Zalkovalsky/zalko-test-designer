@@ -1,18 +1,27 @@
 import { Component, Input } from '@angular/core';
-import { BaseQuestionComponent } from './short-text-question.component';
+import { DynamicField } from './../../models/dynamic-field.interface';
+import { BaseElement } from './../../models/base-element';
+import { FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'single-selection-question',
     templateUrl: './single-selection-question.component.html'
 })
-export class SingleSelectionQuestionComponent extends BaseQuestionComponent {
-    @Input() options: string[];
+export class SingleSelectionQuestionComponent implements DynamicField {
+    element: BaseElement;
+    formGroup: FormGroup;
+
 
     pushOption(): void {
-        if (!this.options) {
-            this.options = new Array<string>();
+        if (!this.element.options) {
+            this.element.options = new Array<string>();
         }
 
-        this.options.push('Select option');
+        this.element.options.push('Please edit me');
+    }
+
+    popOption(option: string): void {
+        // TODO: make strongly-typed
+        this.element.options = this.element.options.filter((o) => o === option);
     }
 }

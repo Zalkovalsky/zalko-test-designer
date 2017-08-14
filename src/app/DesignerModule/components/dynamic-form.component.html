@@ -1,0 +1,7 @@
+<form [formGroup]="formGroup">
+
+    <ng-container *ngFor="let element of elements;" dynamic-field [element]="element" [formGroup]="formGroup">
+
+    </ng-container>
+
+</form>
