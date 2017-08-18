@@ -8,7 +8,10 @@
     </div>
     <ol style="list-style: lower-latin">
         <li *ngFor="let option of element.options">
-            <editable-text [(value)]="option.value" [placeholderText]="'Please enter option text'"></editable-text>
+            <div style="display:inline-block">
+                <editable-text [(value)]="option.value" [placeholderText]="'Please enter option text'"></editable-text>
+                <button md-button type="button" (click)="element.removeOption(option)">Remove</button>
+            </div>
         </li>
     </ol>
 </div>
