@@ -21,6 +21,7 @@ import { DynamicFormComponent } from './components/dynamic-form.component';
 import { DesignerGridComponent } from './components/designer-grid.component';
 import { FormSettingsComponent } from './components/form-settings.component';
 import { EditableTextComponent } from './components/editable-text.component';
+import { EditableMultilineTextComponent } from './components/editable-multiline-text.component';
 
 import { ElementTypeService } from './services/element-type.service';
 import { CollectionHelperService } from './services/collection-helper.service';
@@ -29,6 +30,8 @@ import { DynamicFieldDirective } from './components/dynamic-field.directive';
 import { ShortTextQuestionComponent } from './components/questions/short-text-question.component';
 import { SingleSelectionQuestionComponent } from './components/questions/single-selection-question.component';
 import { FormSentenceQuestionComponent } from './components/questions/form-sentence.question.component';
+import { FillBlanksQuestionComponent } from './components/questions/fill-blanks-question.component';
+
 @NgModule({
     imports: [
         FormsModule,
@@ -53,9 +56,11 @@ import { FormSentenceQuestionComponent } from './components/questions/form-sente
         DesignerGridComponent,
         FormSettingsComponent,
         EditableTextComponent,
+        EditableMultilineTextComponent,
         ShortTextQuestionComponent,
         SingleSelectionQuestionComponent,
-        FormSentenceQuestionComponent
+        FormSentenceQuestionComponent,
+        FillBlanksQuestionComponent
     ],
     bootstrap: [
         NewElementComponent
@@ -70,7 +75,8 @@ import { FormSentenceQuestionComponent } from './components/questions/form-sente
     entryComponents: [ // for dynamic generation
         ShortTextQuestionComponent,
         SingleSelectionQuestionComponent,
-        FormSentenceQuestionComponent
+        FormSentenceQuestionComponent,
+        FillBlanksQuestionComponent
     ]
 })
 export class DesignerModule { }

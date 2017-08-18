@@ -14,10 +14,4 @@ export class SingleSelectionQuestionComponent implements DynamicField {
     pushOption(): void {
         this.element.pushOption('Please edit me');
     }
-
-    popOption(option: Option): void {
-        let index = this.element.options.indexOf(option);
-
-        this.element.options.splice(index, 1);
-    }
 }

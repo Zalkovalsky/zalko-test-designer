@@ -1,15 +1,13 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { DynamicField } from './../../models/dynamic-field.interface';
 import { BaseElement } from './../../models/base-element';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-    selector: 'short-text-question',
-    templateUrl: './short-text-question.component.html'
+    selector: 'fill-blanks-question',
+    templateUrl: './fill-blanks-question.component.html'
 })
-export class ShortTextQuestionComponent implements DynamicField {
+export class FillBlanksQuestionComponent implements DynamicField {
     element: BaseElement;
     formGroup: FormGroup;
-    
 }
-

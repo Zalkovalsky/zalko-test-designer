@@ -1,0 +1,17 @@
+<div class="editable-text-input" *ngIf="isEditing; else readOnly">
+        <md-input-container>
+            <textarea 
+                [(ngModel)]="value"
+                (ngModelChange)="onValueChange($event)"
+                mdInput
+                placeholder="{{placeholderText}}"
+                required
+                ></textarea>
+        </md-input-container>
+        <button md-button (click)="save()">Save</button>
+        <button md-button (click)="cancel()">Cancel</button>
+    </div>
+    
+    <ng-template #readOnly>
+        <span class="editable-text" (click)="edit()" [innerHTML]="value"></span>
+    </ng-template>

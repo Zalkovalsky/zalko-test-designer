@@ -31,6 +31,14 @@ export class DesignerGridComponent {
             questionId: 3,
             questionText: 'Put in correct order',
             additionalText: 'I change all letters a'
+        }),
+        new BaseElement({
+            elementType: ElementType.FillUpBlanks,
+            name: 'bl1',
+            placeholderText: 'Enter question text',
+            questionId: 4,
+            questionText: 'Fill in blanks',
+            additionalText: 'Please fill empty space. Mru is _ great.'
         })
     ]
 }
