@@ -2,10 +2,12 @@
     <md-input-container>
         <input type="text"
             [(ngModel)]="value"
+            (ngModelChange)="onValueChange($event)"
             mdInput
             placeholder="{{placeholderText}}"
             (keyup.enter)="save()" 
-            autofocus/>
+            required
+            />
     </md-input-container>
     <button md-button (click)="save()">Save</button>
     <button md-button (click)="cancel()">Cancel</button>

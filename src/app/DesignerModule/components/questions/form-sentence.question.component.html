@@ -1,0 +1,4 @@
+<div>
+    <editable-text [(value)]="element.questionText" [placeholderText]="'Enter question text'"></editable-text>
+    <editable-text (onSave)="onSave($event)" [(value)]="element.additionalText" [placeholderText]="element.placeholderText" (onSave)="onSave($event)"></editable-text>
+</div>

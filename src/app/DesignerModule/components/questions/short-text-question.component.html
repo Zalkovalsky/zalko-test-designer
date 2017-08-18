@@ -1,7 +1,7 @@
 <div style="display: flex; flex-direction: column; margin: 5pt" [formGroup]="formGroup">
     <div style="flex: 1 100%; margin-bottom: 15pt">
         <span>{{element.questionId}}.</span>
-        <editable-text [value]="element.questionText" [placeholderText]="element.placeholderText"></editable-text>
+        <editable-text [(value)]="element.questionText" [placeholderText]="element.placeholderText"></editable-text>
     </div>
     <div style="flex: 1 100%; border-bottom: 1pt dotted black;"></div>
 </div>

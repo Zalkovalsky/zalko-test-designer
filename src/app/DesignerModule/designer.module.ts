@@ -21,12 +21,14 @@ import { DynamicFormComponent } from './components/dynamic-form.component';
 import { DesignerGridComponent } from './components/designer-grid.component';
 import { FormSettingsComponent } from './components/form-settings.component';
 import { EditableTextComponent } from './components/editable-text.component';
+
 import { ElementTypeService } from './services/element-type.service';
+import { CollectionHelperService } from './services/collection-helper.service';
 
 import { DynamicFieldDirective } from './components/dynamic-field.directive';
 import { ShortTextQuestionComponent } from './components/questions/short-text-question.component';
 import { SingleSelectionQuestionComponent } from './components/questions/single-selection-question.component';
-
+import { FormSentenceQuestionComponent } from './components/questions/form-sentence.question.component';
 @NgModule({
     imports: [
         FormsModule,
@@ -52,7 +54,8 @@ import { SingleSelectionQuestionComponent } from './components/questions/single-
         FormSettingsComponent,
         EditableTextComponent,
         ShortTextQuestionComponent,
-        SingleSelectionQuestionComponent
+        SingleSelectionQuestionComponent,
+        FormSentenceQuestionComponent
     ],
     bootstrap: [
         NewElementComponent
@@ -61,11 +64,13 @@ import { SingleSelectionQuestionComponent } from './components/questions/single-
         DesignerGridComponent
     ],
     providers: [
-        ElementTypeService
+        ElementTypeService,
+        CollectionHelperService
     ],
     entryComponents: [ // for dynamic generation
         ShortTextQuestionComponent,
-        SingleSelectionQuestionComponent
+        SingleSelectionQuestionComponent,
+        FormSentenceQuestionComponent
     ]
 })
 export class DesignerModule { }

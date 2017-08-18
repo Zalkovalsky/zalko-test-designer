@@ -14,11 +14,12 @@ import { DynamicField } from './../models/dynamic-field.interface';
 
 import { ShortTextQuestionComponent } from './questions/short-text-question.component';
 import { SingleSelectionQuestionComponent } from './questions/single-selection-question.component';
-
+import { FormSentenceQuestionComponent } from './questions/form-sentence.question.component';
 
 const components = {
     'Short Text': ShortTextQuestionComponent,
-    'Single Selection': SingleSelectionQuestionComponent
+    'Single Selection': SingleSelectionQuestionComponent,
+    'Form Sentence': FormSentenceQuestionComponent
 };
 
 @Directive({
