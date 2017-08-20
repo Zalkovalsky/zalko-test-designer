@@ -1,11 +1,7 @@
-<div style="display: flex; flex-direction: column; margin: 5pt" >
-    <editable-text 
-        style="flex: 1 100%"
-        [(value)]="element.questionText"
-        [placeholderText]="'Enter question text'"></editable-text>
-    <editable-text 
-        style="flex: 1 100%"
-        (onSave)="onSave($event)"
-        [(value)]="element.additionalText" 
-        [placeholderText]="element.placeholderText" ></editable-text>
+<div style="display: flex; flex-direction: column; margin: 5pt">
+    <div style="flex: 1 100%; margin-bottom: 15pt">
+        <span>{{element.questionId}}.</span>
+        <editable-text [(value)]="element.questionText" [placeholderText]="'Enter question text'"></editable-text>
+    </div>
+    <editable-text style="flex: 1 100%" (onSave)="onSave($event)" [(value)]="element.additionalText" [placeholderText]="element.placeholderText"></editable-text>
 </div>

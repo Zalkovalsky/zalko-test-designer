@@ -8,12 +8,12 @@
             <form style="margin-top: 10pt">
                 <md-select style="width: 60%" placeholder="Element type" [(ngModel)]="selectedType" name="type">
                     <md-option *ngFor="let type of availableTypes" [value]="type">
-                        {{type}}
+                        {{type.value}}
                     </md-option>
                 </md-select>
             </form>
         </md-card-content>
         <md-card-actions>
-            <button md-button>Add</button>
+            <button md-button type="button" (click)="addSelected()">Add</button>
         </md-card-actions>
     </md-card>

@@ -15,8 +15,8 @@ export class EditableMultilineTextComponent {
 
     private _cachedValue: string;
     private regexFn = /[_]/g;
-    private revertRegexFn = /(<span>)(&nbsp;)+(<\/span>)/g
-    private spaceCode = '<span>&nbsp;&nbsp;&nbsp;</span>';
+    private revertRegexFn = /(<span>)(_)+(<\/span>)/g
+    private spaceCode = '<span>______</span>';
     @Input() value: string;
     @Output() valueChange = new EventEmitter();
     onValueChange(val: string) {

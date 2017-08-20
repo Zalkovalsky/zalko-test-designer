@@ -25,6 +25,8 @@ import { EditableMultilineTextComponent } from './components/editable-multiline-
 
 import { ElementTypeService } from './services/element-type.service';
 import { CollectionHelperService } from './services/collection-helper.service';
+import { NewElementService } from './services/new-element.service';
+import { ElementFactoryService } from './services/element-factory.service';
 
 import { DynamicFieldDirective } from './components/dynamic-field.directive';
 import { ShortTextQuestionComponent } from './components/questions/short-text-question.component';
@@ -70,7 +72,9 @@ import { FillBlanksQuestionComponent } from './components/questions/fill-blanks-
     ],
     providers: [
         ElementTypeService,
-        CollectionHelperService
+        CollectionHelperService,
+        NewElementService,
+        ElementFactoryService
     ],
     entryComponents: [ // for dynamic generation
         ShortTextQuestionComponent,
