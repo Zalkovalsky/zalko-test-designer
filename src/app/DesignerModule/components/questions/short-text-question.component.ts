@@ -5,11 +5,12 @@ import { FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'short-text-question',
-    templateUrl: './short-text-question.component.html'
+    templateUrl: './short-text-question.component.html',
+    styleUrls: ['./../../designer-module.style.css']
 })
 export class ShortTextQuestionComponent implements DynamicField {
     element: BaseElement;
     formGroup: FormGroup;
-    
+
 }
 

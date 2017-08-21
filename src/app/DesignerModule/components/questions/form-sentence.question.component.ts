@@ -4,14 +4,10 @@ import { BaseElement } from './../../models/base-element';
 import { FormGroup } from '@angular/forms';
 import { CollectionHelperService } from './../../services/collection-helper.service';
 
-class BaseQuestionComponent implements DynamicField {
-    element: BaseElement;
-    formGroup: FormGroup;
-}
-
 @Component({
     selector: 'form-sentence-question',
-    templateUrl: './form-sentence.question.component.html'
+    templateUrl: './form-sentence.question.component.html',
+    styleUrls: ['./../../designer-module.style.css']    
 })
 export class FormSentenceQuestionComponent implements DynamicField {
     element: BaseElement;

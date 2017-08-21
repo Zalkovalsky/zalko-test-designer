@@ -5,7 +5,8 @@ import { FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'single-selection-question',
-    templateUrl: './single-selection-question.component.html'
+    templateUrl: './single-selection-question.component.html',
+    styleUrls: ['./../../designer-module.style.css']
 })
 export class SingleSelectionQuestionComponent implements DynamicField {
     element: BaseElement;

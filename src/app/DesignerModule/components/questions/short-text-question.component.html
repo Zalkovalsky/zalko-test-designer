@@ -1,5 +1,5 @@
-<div style="display: flex; flex-direction: column; margin: 5pt" [formGroup]="formGroup">
-    <div style="flex: 1 100%; margin-bottom: 15pt">
+<div class="element_container" [formGroup]="formGroup">
+    <div class="element_header">
         <span>{{element.questionId}}.</span>
         <editable-text [(value)]="element.questionText" [placeholderText]="element.placeholderText"></editable-text>
     </div>

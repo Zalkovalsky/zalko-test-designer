@@ -5,7 +5,8 @@ import { FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'fill-blanks-question',
-    templateUrl: './fill-blanks-question.component.html'
+    templateUrl: './fill-blanks-question.component.html',
+    styleUrls: ['./../../designer-module.style.css']    
 })
 export class FillBlanksQuestionComponent implements DynamicField {
     element: BaseElement;

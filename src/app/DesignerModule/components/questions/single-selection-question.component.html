@@ -1,17 +1,19 @@
-<div style="margin:5pt">
-    <div [formGroup]="formGroup">
+<div class="element_container">
+    <div [formGroup]="formGroup" class="element_header">
         <span>{{element.questionId}}.</span>
-        <div style="display: block">
+        <div style="display: inline-block">
             <editable-text [(value)]="element.questionText" [placeholderText]="'Enter the question title'"></editable-text>
             <button md-button (click)="pushOption()" type="button">Add</button>
         </div>
     </div>
-    <ol style="list-style: lower-latin">
-        <li *ngFor="let option of element.options">
-            <div style="display:inline-block">
-                <editable-text [(value)]="option.value" [placeholderText]="'Please enter option text'"></editable-text>
-                <button md-button type="button" (click)="element.removeOption(option)">Remove</button>
-            </div>
-        </li>
-    </ol>
+    <div class="element_body">
+        <ol style="list-style: lower-latin">
+            <li *ngFor="let option of element.options">
+                <div style="display:inline-block">
+                    <editable-text [(value)]="option.value" [placeholderText]="'Please enter option text'"></editable-text>
+                    <button md-button type="button" (click)="element.removeOption(option)">Remove</button>
+                </div>
+            </li>
+        </ol>
+    </div>
 </div>
