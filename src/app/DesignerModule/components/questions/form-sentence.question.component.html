@@ -1,9 +1,9 @@
-<div class="element_container">
-    <div class="element_header">
+<div class="element-container">
+    <div class="element-header">
         <span>{{element.questionId}}.</span>
         <editable-text [(value)]="element.questionText" [placeholderText]="'Enter question text'"></editable-text>
     </div>
-    <div class="element_body">
+    <div class="element-body">
         <editable-text (onSave)="onSave($event)" [(value)]="element.additionalText" [placeholderText]="element.placeholderText"></editable-text>
     </div>
 </div>

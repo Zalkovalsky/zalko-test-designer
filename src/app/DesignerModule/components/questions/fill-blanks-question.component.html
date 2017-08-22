@@ -1,9 +1,9 @@
-<div class="element_container" [formGroup]="formGroup">
-    <div class="element_header">
+<div class="element-container" [formGroup]="formGroup">
+    <div class="element-header">
         <span>{{element.questionId}}.</span>
         <editable-text [(value)]="element.questionText" [placeholderText]="element.placeholderText"></editable-text>
     </div>
-    <div class="element_body">
+    <div class="element-body">
         <editable-multiline-text [(value)]="element.additionalText" [placeholderText]="'Enter text with _ spaces'"></editable-multiline-text>
     </div>
 </div>

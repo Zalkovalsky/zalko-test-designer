@@ -9,11 +9,7 @@ export class NewElementService {
 
     newElementAddedObservable = this.newElementAdded.asObservable();
 
-    constructor() {
-        console.log('initialized NewElemenSvc');
-    }
     add(element: ElementType) {
-        console.log('adding:'+element);
         this.newElementAdded.next(element);
     }
 }

@@ -1,12 +1,12 @@
-<div class="element_container">
-    <div [formGroup]="formGroup" class="element_header">
+<div class="element-container">
+    <div [formGroup]="formGroup" class="element-header">
         <span>{{element.questionId}}.</span>
         <div style="display: inline-block">
             <editable-text [(value)]="element.questionText" [placeholderText]="'Enter the question title'"></editable-text>
             <button md-button (click)="pushOption()" type="button">Add</button>
         </div>
     </div>
-    <div class="element_body">
+    <div class="element-body">
         <ol style="list-style: lower-latin">
             <li *ngFor="let option of element.options">
                 <div style="display:inline-block">

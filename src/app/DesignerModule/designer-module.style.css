@@ -1,15 +1,15 @@
-#designer_grid_container{
+#designer-grid-container{
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
     justify-content:center;
 }
-#designer_form_container {
+#designer-form-container {
     flex:1 100%;
     border: 1pt dashed black;
     margin: 25px
 }
-.designer_card_container {
+.designer-card-container {
     flex: 1 50%;
 }
 
@@ -25,15 +25,15 @@
 }
 
 /* Grid elements */
-.element_container {
+.element-container {
     display: flex; 
     flex-direction: column;
     margin: 5pt;
 }
-.element_header {
+.element-header {
     flex: 1 100%;
     margin-bottom: 15pt;
 }
-.element_body {
+.element-body {
     flex: 1 100%;
 }
