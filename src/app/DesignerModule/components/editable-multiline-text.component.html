@@ -1,5 +1,5 @@
-<div class="editable-text-input" *ngIf="isEditing; else readOnly">
-        <md-input-container>
+<div class="editable-multiline-text-input" *ngIf="isEditing; else readOnly">
+        <md-input-container style="width: 95%">
             <textarea 
                 [(ngModel)]="value"
                 (ngModelChange)="onValueChange($event)"
@@ -13,5 +13,5 @@
     </div>
     
     <ng-template #readOnly>
-        <span class="editable-text" (click)="edit()" [innerHTML]="value"></span>
+        <span class="editable-multiline-text" (click)="edit()" [innerHTML]="value"></span>
     </ng-template>

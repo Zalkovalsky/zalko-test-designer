@@ -23,17 +23,33 @@
 .editable-text-input {
     display: inline-block;
 }
-
+.editable-multiline-text {
+    border-bottom: 1pt dashed cornflowerblue;
+    word-wrap: break-word;    
+}
+.editable-multiline-text-input {
+    width: 100%;
+}
+textarea {
+    overflow: visible;
+    border: 1pt solid plum;
+    resize: both;
+    width: 100%;
+}
 /* Grid elements */
 .element-container {
     display: flex; 
     flex-direction: column;
     margin: 5pt;
+    padding: 2.5pt;
+    border: 0.5pt dashed black;
 }
 .element-header {
     flex: 1 100%;
-    margin-bottom: 15pt;
 }
 .element-body {
-    flex: 1 100%;
+    flex: 1 auto;
+}
+.element-body ol {
+    margin: 0;
 }

@@ -3,7 +3,13 @@
         <span>{{element.questionId}}.</span>
         <editable-text [(value)]="element.questionText" [placeholderText]="'Enter question text'"></editable-text>
     </div>
-    <div class="element-body">
-        <editable-text (onSave)="onSave($event)" [(value)]="element.additionalText" [placeholderText]="element.placeholderText"></editable-text>
+    <div class="element-body" style="display:flex; align-content: stretch">
+        <editable-text 
+            style="flex: 1  0 auto"
+            (onSave)="onSave($event)"
+            [(value)]="element.additionalText" 
+            [placeholderText]="element.placeholderText"></editable-text>
+        
+        <div style="flex: 1 100%; margin-left: 5pt; border-bottom: 1pt solid black"></div>
     </div>
 </div>

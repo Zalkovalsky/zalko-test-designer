@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="element-body">
-        <ol style="list-style: lower-latin">
+        <ol style="list-style: lower-latin; display: inline-block">
             <li *ngFor="let option of element.options">
                 <div style="display:inline-block">
                     <editable-text [(value)]="option.value" [placeholderText]="'Please enter option text'"></editable-text>
