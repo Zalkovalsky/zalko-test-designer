@@ -16,13 +16,14 @@
 
             <div style="flex:1 100%">
                 <md-input-container>
-                    <input mdInput type="number" placeholder="Test header font size" value="25">
+                    <input mdInput type="number" placeholder="Test header font size" >
                 </md-input-container>
             </div>
 
             <div style="flex:1 100%">
                 <md-input-container>
-                    <input mdInput type="number" placeholder="Test body font size" value="18">
+                    <input mdInput type="number" placeholder="Test body font size" [(ngModel)]="gridElementsSize" (ngModelChange)="onGridFontSize($event)"
+                    [ngModelOptions]="{standalone: true}">
                 </md-input-container>
             </div>
         </form>

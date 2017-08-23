@@ -25,7 +25,8 @@ const components = {
 };
 
 @Directive({
-    selector: '[dynamic-field]',
+    selector: '[dynamic-field]'
+
 })
 export class DynamicFieldDirective implements OnInit, OnChanges, DynamicField {
     @Input() element: BaseElement;
@@ -42,7 +43,7 @@ export class DynamicFieldDirective implements OnInit, OnChanges, DynamicField {
             this.component.instance.formGroup = this.formGroup;
         }
     }
-    
+
     ngOnInit(): void {
 
        if (!components[this.element.elementType]) {
