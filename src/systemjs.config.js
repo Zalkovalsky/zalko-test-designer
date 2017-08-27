@@ -50,4 +50,8 @@
       }
     }
   });
+  System.set('electron', System.newModule(require('electron')));
+  System.set('fs', System.newModule(require('fs')));
+  System.set('path', System.newModule(require('path')));
+  System.set('os', System.newModule(require('os')));
 })(this);
