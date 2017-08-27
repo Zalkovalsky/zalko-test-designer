@@ -27,7 +27,7 @@
       // other libraries
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-
+      'hammerjs': 'npm:hammerjs/hammer.js',
       // Angular.material.io
       '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
       '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
