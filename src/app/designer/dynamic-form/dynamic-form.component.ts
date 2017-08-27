@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { BaseElement } from './../models/base-element';
-import { ElementType } from './../models/element-type';
-import { NewElementService } from './../services/new-element.service';
+import { BaseElement } from './../shared/models/base-element';
+import { ElementType } from './../shared/models/element-type';
+import { NewElementService } from './../shared/services/new-element.service';
 import { Subscription } from 'rxjs/Subscription';
-import { ElementFactoryService } from './../services/element-factory.service';
+import { ElementFactoryService } from './../shared/services/element-factory.service';
 
 @Component({
     selector: 'dynamic-form',

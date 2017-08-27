@@ -8,14 +8,14 @@ import { ComponentFactoryResolver,
     ViewContainerRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { BaseElement } from './../models/base-element';
-import { ElementType } from './../models/element-type';
-import { DynamicField } from './../models/dynamic-field.interface';
+import { BaseElement } from './../shared/models/base-element';
+import { ElementType } from './../shared/models/element-type';
+import { DynamicField } from './../shared/models/dynamic-field.interface';
 
-import { ShortTextQuestionComponent } from './questions/short-text-question.component';
-import { SingleSelectionQuestionComponent } from './questions/single-selection-question.component';
-import { FormSentenceQuestionComponent } from './questions/form-sentence.question.component';
-import { FillBlanksQuestionComponent } from './questions/fill-blanks-question.component';
+import { ShortTextQuestionComponent } from './../questions/short-text/short-text-question.component';
+import { SingleSelectionQuestionComponent } from './../questions/single-selection/single-selection-question.component';
+import { FormSentenceQuestionComponent } from './../questions/form-sentence/form-sentence.question.component';
+import { FillBlanksQuestionComponent } from './../questions/fill-blanks/fill-blanks-question.component';
 
 const components = {
     'Short Text': ShortTextQuestionComponent,

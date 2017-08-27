@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ElementTypeService,TypeSelection } from '../services/element-type.service';
-import { NewElementService } from '../services/new-element.service';
-import { ElementType } from '../models/element-type';
+import { ElementTypeService,TypeSelection } from '../shared/services/element-type.service';
+import { NewElementService } from '../shared/services/new-element.service';
+import { ElementType } from '../shared/models/element-type';
 
 
 @Component({

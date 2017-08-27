@@ -1,6 +1,6 @@
 import { Component, Input, ElementRef, Renderer, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
-import { FontSizeBroadcasterService } from './../services/font-size-broadcaster.serivce';
+import { FontSizeBroadcasterService } from './../shared/services/font-size-broadcaster.serivce';
 
 @Component({
     selector: 'adjustable-text-field',

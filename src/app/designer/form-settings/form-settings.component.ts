@@ -1,5 +1,5 @@
 import { Component, OnChanges, SimpleChanges } from '@angular/core';
-import { FontSizeBroadcasterService } from './../services/font-size-broadcaster.serivce';
+import { FontSizeBroadcasterService } from './../shared/services/font-size-broadcaster.serivce';
 
 @Component({
     selector: 'form-settings',

@@ -15,26 +15,26 @@ import {
     MdSlideToggleModule
 } from '@angular/material';
 
-import { NewElementComponent } from './components/new-element.component';
-import { FormHeaderComponent } from './components/form-header.component';
-import { DynamicFormComponent } from './components/dynamic-form.component';
-import { DesignerGridComponent } from './components/designer-grid.component';
-import { FormSettingsComponent } from './components/form-settings.component';
-import { AdjustableTextFieldComponent } from './components/adjustable-text-field.component';
-import { EditableTextComponent } from './components/editable-text.component';
-import { EditableMultilineTextComponent } from './components/editable-multiline-text.component';
+import { NewElementComponent } from './new-element/new-element.component';
+import { FormHeaderComponent } from './form-header/form-header.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { DesignerGridComponent } from './designer-grid/designer-grid.component';
+import { FormSettingsComponent } from './form-settings/form-settings.component';
+import { AdjustableTextFieldComponent } from './shared/adjustable-text-field.component';
+import { EditableTextComponent } from './editable-text/editable-text.component';
+import { EditableMultilineTextComponent } from './editable-multiline-text/editable-multiline-text.component';
 
-import { ElementTypeService } from './services/element-type.service';
-import { CollectionHelperService } from './services/collection-helper.service';
-import { NewElementService } from './services/new-element.service';
-import { ElementFactoryService } from './services/element-factory.service';
-import { FontSizeBroadcasterService } from './services/font-size-broadcaster.serivce';
+import { ElementTypeService } from './shared/services/element-type.service';
+import { CollectionHelperService } from './shared/services/collection-helper.service';
+import { NewElementService } from './shared/services/new-element.service';
+import { ElementFactoryService } from './shared/services/element-factory.service';
+import { FontSizeBroadcasterService } from './shared/services/font-size-broadcaster.serivce';
 
-import { DynamicFieldDirective } from './components/dynamic-field.directive';
-import { ShortTextQuestionComponent } from './components/questions/short-text-question.component';
-import { SingleSelectionQuestionComponent } from './components/questions/single-selection-question.component';
-import { FormSentenceQuestionComponent } from './components/questions/form-sentence.question.component';
-import { FillBlanksQuestionComponent } from './components/questions/fill-blanks-question.component';
+import { DynamicFieldDirective } from './shared/dynamic-field.directive';
+import { ShortTextQuestionComponent } from './questions/short-text/short-text-question.component';
+import { SingleSelectionQuestionComponent } from './questions/single-selection/single-selection-question.component';
+import { FormSentenceQuestionComponent } from './questions/form-sentence/form-sentence.question.component';
+import { FillBlanksQuestionComponent } from './questions/fill-blanks/fill-blanks-question.component';
 
 @NgModule({
     imports: [

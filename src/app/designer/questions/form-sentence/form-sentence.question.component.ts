@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { DynamicField } from './../../models/dynamic-field.interface';
-import { BaseElement } from './../../models/base-element';
+import { DynamicField } from './../../shared/models/dynamic-field.interface';
+import { BaseElement } from './../../shared/models/base-element';
 import { FormGroup } from '@angular/forms';
-import { CollectionHelperService } from './../../services/collection-helper.service';
+import { CollectionHelperService } from './../../shared/services/collection-helper.service';
 
 @Component({
     selector: 'form-sentence-question',
