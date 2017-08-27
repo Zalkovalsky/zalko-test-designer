@@ -1,0 +1,31 @@
+<md-toolbar color="primary">
+    <span>Zalko Test Designer</span>
+    <md-toolbar-row>
+        <span class="spacer"></span>
+    </md-toolbar-row>
+</md-toolbar>
+<div id="start-page-main-container">
+    <md-card class="start-page-card">
+            <md-card-header>
+                    <md-card-title>
+                        <h3>Main menu</h3>
+                    </md-card-title>
+                </md-card-header>
+        <md-card-content>
+            <div id="start-page-buttons-container">
+                <button md-raised-button type="button" class="start-page-button" (click)="onStartNew()">Start new</button>
+                <button md-raised-button type="button" class="start-page-button">Load</button>
+            </div>
+        </md-card-content>
+    </md-card>
+    <md-card class="start-page-card" style="margin-top:25px;">
+        <md-card-header>
+            <md-card-title>
+                <h3>Recently opened</h3>
+            </md-card-title>
+        </md-card-header>
+        <md-card-content>
+            <span>List goes here</span>
+        </md-card-content>
+    </md-card>
+</div>

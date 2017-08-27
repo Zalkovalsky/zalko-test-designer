@@ -1,0 +1,26 @@
+#start-page-main-container {
+    display: flex; 
+    justify-content:space-around; 
+    flex-flow: column; 
+    z-index: 2; 
+    margin-top: -30px;
+}
+
+#start-page-buttons-container {
+    display: flex; 
+    justify-content: space-between; 
+    flex-flow: row wrap;
+}
+.start-page-card {
+    margin:auto; 
+    width:80%;
+}
+.start-page-button {
+    flex: 1 90%;
+    margin: 10px;
+    height: 50px;
+    font-weight: bold;
+}
+.spacer {
+    flex: 1 1;
+}
