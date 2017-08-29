@@ -1,17 +1,36 @@
-<div id="designer-grid-container">
+<md-sidenav-container>
 
     <md-toolbar color="primary">
-        <span>Zalko Test Designer</span>
+        <span><button type="button" md-button (click)="settings.open()">
+            <md-icon>menu</md-icon>
+          </button>Zalko Test Designer</span>
+        <md-toolbar-row> </md-toolbar-row>
     </md-toolbar>
+    <md-sidenav #settings>
+        <form-settings></form-settings>
+    </md-sidenav>
+    <div id="designer-grid-container">
 
-    <new-element class="designer-card-container"></new-element>
+        <new-element class="designer-card-container"></new-element>
 
-    <form-settings class="designer-card-container"></form-settings>
+        <div class="designer-card-container" style="margin-top: 15pt; margin-bottom: 15pt;">
+            <md-card>
+                <md-card-header>
+                    <md-card-title>
+                        <h1>Interactive Preview</h1>
+                    </md-card-title>
+                    <md-card-subtitle>
+                        <h3>Edit, move or delete test elements here</h3>
+                    </md-card-subtitle>
+                </md-card-header>
+                <md-card-content>
+                    <div id="designer-form-container">
+                        <form-header></form-header>
 
-    <div id="designer-form-container">
-        <form-header></form-header>
-
-        <dynamic-form></dynamic-form>
+                        <dynamic-form></dynamic-form>
+                    </div>
+                </md-card-content>
+            </md-card>
+        </div>
     </div>
-
-</div>
+</md-sidenav-container>

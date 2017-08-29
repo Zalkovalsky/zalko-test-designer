@@ -12,7 +12,9 @@ import {
     MdCardModule,
     MdGridListModule,
     MdToolbarModule,
-    MdSlideToggleModule
+    MdSlideToggleModule,
+    MdSidenavModule,
+    MdListModule
 } from '@angular/material';
 
 import { NewElementComponent } from './new-element/new-element.component';
@@ -50,6 +52,8 @@ import { FillBlanksQuestionComponent } from './questions/fill-blanks/fill-blanks
         MdGridListModule,
         MdToolbarModule,
         MdSlideToggleModule,
+        MdSidenavModule,
+        MdListModule,
         CommonModule
     ],
     declarations: [

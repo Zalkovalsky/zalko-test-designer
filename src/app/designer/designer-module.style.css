@@ -1,16 +1,19 @@
 #designer-grid-container{
     display: flex;
-    flex-flow: row wrap;
-    align-items: stretch;
-    justify-content:center;
+    flex-flow: column;
+    justify-content: space-around;
+    margin-top: -30px;
+    z-index: 2;     
 }
 #designer-form-container {
     flex:1 100%;
     border: 1pt dashed black;
-    margin: 25px
+    margin: 25px;
+    min-height: 24cm;
 }
 .designer-card-container {
-    flex: 1 50%;
+    width: 80%;
+    margin: auto;
 }
 
 /* Editable text component */

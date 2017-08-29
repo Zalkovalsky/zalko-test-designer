@@ -1,34 +1,19 @@
-<md-card style="margin: 25px;">
-    <md-card-header>
-        <md-card-title>
-            <h2>Settings</h2>
-        </md-card-title>
-    </md-card-header>
-    <md-card-content>
-        <form style="display: flex; flex-flow: row wrap; margin-top: 10pt">
-
-
-            <div style="flex:1 100%">
-
-                <md-slide-toggle>Use two-columns layout</md-slide-toggle>
-            </div>
-
-
-            <div style="flex:1 100%">
-                <md-input-container>
-                    <input mdInput type="number" placeholder="Test header font size" >
-                </md-input-container>
-            </div>
-
-            <div style="flex:1 100%">
-                <md-input-container>
-                    <input mdInput type="number" placeholder="Test body font size" [(ngModel)]="gridElementsSize" (ngModelChange)="onGridFontSize($event)"
-                    [ngModelOptions]="{standalone: true}">
-                </md-input-container>
-            </div>
-        </form>
-    </md-card-content>
-    <md-card-actions>
-        <button md-button>Save</button>
-    </md-card-actions>
-</md-card>
+<md-list>
+    <h3 md-subheader>Settings</h3>        
+    <md-list-item>
+        <md-slide-toggle>Use two-columns layout</md-slide-toggle>
+    </md-list-item>
+    <md-divider></md-divider>    
+    <h3 md-subheader>Fonts</h3>            
+    <md-list-item>
+        <md-input-container>
+            <input mdInput type="number" placeholder="Test header font size">
+        </md-input-container>
+    </md-list-item>
+    <md-list-item>
+        <md-input-container>
+            <input mdInput type="number" placeholder="Test body font size" [(ngModel)]="gridElementsSize" (ngModelChange)="onGridFontSize($event)"
+                [ngModelOptions]="{standalone: true}">
+        </md-input-container>
+    </md-list-item>
+</md-list>
