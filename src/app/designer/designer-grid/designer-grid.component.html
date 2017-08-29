@@ -1,13 +1,19 @@
 <md-sidenav-container>
 
     <md-toolbar color="primary">
-        <div>
-            <button type="button" md-button (click)="settings.open()" aria-label="Open menu">
+        <div style="width: 100%; display: flex;">
+            <button  type="button" md-button (click)="settings.open()" aria-label="Open menu">
                 <md-icon aria-hidden="true">menu</md-icon>
             </button> 
-            <span style="vertical-align: middle">Zalko Test Designer</span>
+            <div style="flex: auto"></div>
+            <button type="button" md-button (click)="print()" aria-label="Print document">
+                    <md-icon aria-hidden="true">print</md-icon>
+            </button>
+            <button type="button" md-button (click)="quit()" aria-label="Quit designer">
+                    <md-icon aria-hidden="true">exit_to_app</md-icon>
+            </button> 
         </div>
-        <md-toolbar-row> </md-toolbar-row>
+        <md-toolbar-row></md-toolbar-row>
     </md-toolbar>
     <md-sidenav #settings>
         <form-settings></form-settings>

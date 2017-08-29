@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { ElementType } from '../models/element-type';
+import { ElementType } from '../../models/element-type';
 
 export class TypeSelection {
     constructor(public type: ElementType, public value: string) { }

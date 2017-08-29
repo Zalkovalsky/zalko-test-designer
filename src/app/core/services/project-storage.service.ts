@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Project } from './../../models/project'
 
 @Injectable()
 export class ProjectStorageService {
-    load(path: string) {
-
+    load(json: string) {
+        
     }
 
-    save() {
+    save(project: Project) {
         
     }
 }

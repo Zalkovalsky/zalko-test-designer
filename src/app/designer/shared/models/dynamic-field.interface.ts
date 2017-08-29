@@ -1,5 +1,5 @@
 import { FormGroup } from '@angular/forms';
-import { BaseElement } from './base-element';
+import { BaseElement } from './../../../models/base-element';
 
 export interface DynamicField {
     formGroup: FormGroup;

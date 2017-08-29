@@ -8,8 +8,8 @@ import { ComponentFactoryResolver,
     ViewContainerRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { BaseElement } from './../shared/models/base-element';
-import { ElementType } from './../shared/models/element-type';
+import { BaseElement } from '../../models/base-element';
+import { ElementType } from '../../models/element-type';
 import { DynamicField } from './../shared/models/dynamic-field.interface';
 
 import { ShortTextQuestionComponent } from './../questions/short-text/short-text-question.component';

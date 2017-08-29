@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { DynamicField } from './../../shared/models/dynamic-field.interface';
-import { BaseElement } from './../../shared/models/base-element';
+import { BaseElement } from './../../../models/base-element';
 import { FormGroup } from '@angular/forms';
 
 @Component({

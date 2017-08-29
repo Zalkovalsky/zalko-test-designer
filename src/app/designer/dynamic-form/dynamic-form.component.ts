@@ -4,7 +4,7 @@ import { BaseElement } from './../shared/models/base-element';
 import { ElementType } from './../shared/models/element-type';
 import { NewElementService } from './../shared/services/new-element.service';
 import { Subscription } from 'rxjs/Subscription';
-import { ElementFactoryService } from './../shared/services/element-factory.service';
+import { ElementFactoryService } from './../../core/services/element-factory.service';
 
 @Component({
     selector: 'dynamic-form',

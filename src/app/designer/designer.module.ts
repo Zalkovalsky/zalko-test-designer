@@ -26,10 +26,7 @@ import { AdjustableTextFieldComponent } from './shared/adjustable-text-field.com
 import { EditableTextComponent } from './editable-text/editable-text.component';
 import { EditableMultilineTextComponent } from './editable-multiline-text/editable-multiline-text.component';
 
-import { ElementTypeService } from './shared/services/element-type.service';
-import { CollectionHelperService } from './shared/services/collection-helper.service';
 import { NewElementService } from './shared/services/new-element.service';
-import { ElementFactoryService } from './shared/services/element-factory.service';
 import { FontSizeBroadcasterService } from './shared/services/font-size-broadcaster.serivce';
 
 import { DynamicFieldDirective } from './shared/dynamic-field.directive';
@@ -78,10 +75,7 @@ import { FillBlanksQuestionComponent } from './questions/fill-blanks/fill-blanks
         DesignerGridComponent
     ],
     providers: [
-        ElementTypeService,
-        CollectionHelperService,
         NewElementService,
-        ElementFactoryService,
         FontSizeBroadcasterService
     ],
     entryComponents: [ // for dynamic generation

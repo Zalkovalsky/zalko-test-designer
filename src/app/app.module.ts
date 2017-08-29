@@ -10,10 +10,12 @@ import { DesignerModule } from './designer/designer.module';
 
 import { StartPageComponent } from './project/start-page/start-page.component';
 import { DesignerGridComponent } from './designer/designer-grid/designer-grid.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   imports: [BrowserModule,
     BrowserAnimationsModule,
+    CoreModule.forRoot(),
     ProjectModule,
     DesignerModule,
     RouterModule.forRoot([

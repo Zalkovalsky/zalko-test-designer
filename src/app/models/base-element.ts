@@ -1,6 +1,5 @@
 import { ElementType } from './element-type';
 import { Movable } from './movable.interface';
-import { ValidatorFn } from '@angular/forms';
 import { Option } from './option';
 
 export class BaseElement implements Movable {
