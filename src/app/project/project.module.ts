@@ -4,9 +4,11 @@ import {
     MdButtonModule,
     MdCardModule,
     MdToolbarModule,
-    MdIconModule
+    MdIconModule,
+    MdDialogModule
 } from '@angular/material';
 
+import { FileDialogComponent } from './file-dialog/file-dialog.component';
 import { StartPageComponent } from './start-page/start-page.component';
 
 @NgModule({
@@ -15,15 +17,18 @@ import { StartPageComponent } from './start-page/start-page.component';
         MdCardModule,
         MdButtonModule,
         MdToolbarModule,
-        MdIconModule
+        MdIconModule,
+        MdDialogModule
     ],
     declarations: [
+        FileDialogComponent,
         StartPageComponent
     ],
     bootstrap: [
     ],
     exports: [
         StartPageComponent
-    ]
+    ],
+    entryComponents: [FileDialogComponent]
 })
 export class ProjectModule { }

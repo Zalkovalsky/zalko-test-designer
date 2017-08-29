@@ -1,0 +1,6 @@
+<h1 md-dialog-title>Load existing project</h1>
+<div md-dialog-content>Please select <em>*.ztdp</em> file of your project</div>
+<div md-dialog-actions>
+    <input type="file" title="Select file" #fileUpload accept=".ztdp" (change)="onFileSelected(fileUpload.files)" />
+  <!-- <button md-button md-dialog-close="{{value}}">Open</button> -->
+</div>

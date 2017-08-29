@@ -1,0 +1,12 @@
+﻿{
+	"title": "Projekt ze znakami ąćłóźżć",
+	"createdAt": "2017-08-29T18:30:00",
+	elements = [
+		{
+			"name": "short1",
+			"type": 1,
+			"text": "Edit me",
+			"id": 1
+		}
+	]
+}

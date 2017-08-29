@@ -1,9 +1,12 @@
 <md-sidenav-container>
 
     <md-toolbar color="primary">
-        <span><button type="button" md-button (click)="settings.open()">
-            <md-icon>menu</md-icon>
-          </button>Zalko Test Designer</span>
+        <div>
+            <button type="button" md-button (click)="settings.open()" aria-label="Open menu">
+                <md-icon aria-hidden="true">menu</md-icon>
+            </button> 
+            <span style="vertical-align: middle">Zalko Test Designer</span>
+        </div>
         <md-toolbar-row> </md-toolbar-row>
     </md-toolbar>
     <md-sidenav #settings>

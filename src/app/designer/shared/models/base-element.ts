@@ -1,10 +1,7 @@
 import { ElementType } from './element-type';
 import { Movable } from './movable.interface';
 import { ValidatorFn } from '@angular/forms';
-
-export class Option {
-    constructor(public index: number, public value: string) { }
-}
+import { Option } from './option';
 
 export class BaseElement implements Movable {
     // Mandatory
