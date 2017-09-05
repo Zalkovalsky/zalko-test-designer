@@ -62,6 +62,10 @@ export class DynamicFormComponent implements OnInit, OnDestroy {
         this.store.updateElement(updated);
     }
 
+    onQuestionDeleted(deleted: BaseElement) {
+        this.store.removeElement(deleted);
+    }
+
     ngOnDestroy() {
         this.newElementSubscription.unsubscribe();
     }

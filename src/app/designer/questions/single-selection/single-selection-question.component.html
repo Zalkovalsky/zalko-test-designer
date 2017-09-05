@@ -2,7 +2,7 @@
     <div [formGroup]="formGroup" class="element-header">
         <span>{{element.questionId}}.</span>
         <div style="display: inline-block">
-            <editable-text [(value)]="element.questionText" [placeholderText]="'Enter the question title'"></editable-text>
+            <editable-text [(value)]="element.questionText" [placeholderText]="'Enter the question title'" (onSave)="update($event)"></editable-text>
             <button md-button (click)="pushOption()" type="button">Add</button>
         </div>
     </div>
@@ -10,10 +10,11 @@
         <ol style="list-style: lower-latin; display: inline-block">
             <li *ngFor="let option of element.options">
                 <div style="display:inline-block">
-                    <editable-text [(value)]="option.value" [placeholderText]="'Please enter option text'"></editable-text>
-                    <button md-button type="button" (click)="element.removeOption(option)">Remove</button>
+                    <editable-text [(value)]="option.value" [placeholderText]="'Please enter option text'" (onSave)="update($event)"></editable-text>
+                    <button md-button type="button" (click)="removeOption(option)">Remove</button>
                 </div>
             </li>
         </ol>
     </div>
+    <button type="button" class="element-delete-button" md-icon-button (click)="delete($event)"><md-icon>delete</md-icon></button>    
 </div>

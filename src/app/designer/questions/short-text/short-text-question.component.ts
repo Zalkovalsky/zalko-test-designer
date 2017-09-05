@@ -13,10 +13,14 @@ export class ShortTextQuestionComponent implements DynamicField {
     formGroup: FormGroup;
 
     @Output() onSave = new EventEmitter<BaseElement>();
-    
-    onElemChanged() {
-        console.log('saved:' + this.element);
+    @Output() onDelete = new EventEmitter<BaseElement>();
+
+    update() {
         this.onSave.emit(this.element);
+    }
+
+    delete() {
+        this.onDelete.emit(this.element);
     }
 }
 

@@ -1,7 +1,8 @@
 <div class="element-container" [formGroup]="formGroup">
     <div class="element-header">
         <span>{{element.questionId}}.</span>
-        <editable-text [(value)]="element.questionText" [placeholderText]="element.placeholderText" (onSave)="onElemChanged($event)"></editable-text>
+        <editable-text [(value)]="element.questionText" [placeholderText]="element.placeholderText" (onSave)="update($event)"></editable-text>
     </div>
     <div style="flex: 1 100%; border-bottom:solid 1pt black;height: 15pt"></div>
+    <button type="button" class="element-delete-button" md-icon-button (click)="delete($event)"><md-icon>delete</md-icon></button>    
 </div>

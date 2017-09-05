@@ -1,4 +1,5 @@
-import { ComponentFactoryResolver,
+import {
+    ComponentFactoryResolver,
     ComponentRef,
     Directive,
     Input,
@@ -7,7 +8,8 @@ import { ComponentFactoryResolver,
     OnChanges,
     OnInit,
     Type,
-    ViewContainerRef } from '@angular/core';
+    ViewContainerRef
+} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { BaseElement } from '../../models/base-element';
@@ -34,22 +36,25 @@ export class DynamicFieldDirective implements OnInit, OnChanges, DynamicField {
     @Input() element: BaseElement;
     @Input() formGroup: FormGroup;
     @Output() onSave: EventEmitter<BaseElement> = new EventEmitter<BaseElement>();
+    @Output() onDelete = new EventEmitter<BaseElement>();
+
     component: ComponentRef<DynamicField>;
 
     constructor(private resolver: ComponentFactoryResolver,
-                private container: ViewContainerRef) {};
+        private container: ViewContainerRef) { };
 
     ngOnChanges(): void {
         if (this.component) {
             this.component.instance.element = this.element;
             this.component.instance.formGroup = this.formGroup;
-            this.component.instance.onSave = this.onSave;            
+            this.component.instance.onSave = this.onSave;
+            this.component.instance.onDelete = this.onDelete;
         }
     }
 
     ngOnInit(): void {
 
-       if (!components[this.element.elementType]) {
+        if (!components[this.element.elementType]) {
             const supportedTypes = Object.keys(components).join(', ');
 
             throw new Error(`Unsupported type. Supported types: ${supportedTypes}`);
@@ -62,5 +67,6 @@ export class DynamicFieldDirective implements OnInit, OnChanges, DynamicField {
         this.component.instance.element = this.element;
         this.component.instance.formGroup = this.formGroup;
         this.component.instance.onSave = this.onSave;
+        this.component.instance.onDelete = this.onDelete;
     }
 }

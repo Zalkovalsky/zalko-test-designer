@@ -46,6 +46,7 @@ textarea {
     margin: 5pt;
     padding: 2.5pt;
     border: 0.5pt dashed black;
+    position: relative;
 }
 .element-header {
     flex: 1 100%;
@@ -55,4 +56,9 @@ textarea {
 }
 .element-body ol {
     margin: 0;
+}
+.element-delete-button {
+    position: absolute; 
+    top:0; 
+    right: 0;
 }
