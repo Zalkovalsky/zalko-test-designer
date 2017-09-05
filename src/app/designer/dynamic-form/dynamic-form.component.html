@@ -1,6 +1,10 @@
 <form [formGroup]="formGroup">
 
-    <ng-container *ngFor="let element of elements;" dynamic-field [element]="element" [formGroup]="formGroup">
+    <ng-container *ngFor="let element of store.elements | async;" 
+                dynamic-field 
+                [element]="element" 
+                [formGroup]="formGroup"
+                (onSave)="onQuestionSaved($event)">
 
     </ng-container>
 

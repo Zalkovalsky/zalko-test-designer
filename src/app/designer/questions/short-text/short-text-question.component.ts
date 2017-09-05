@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { DynamicField } from './../../shared/models/dynamic-field.interface';
 import { BaseElement } from './../../../models/base-element';
 import { FormGroup } from '@angular/forms';
@@ -12,5 +12,11 @@ export class ShortTextQuestionComponent implements DynamicField {
     element: BaseElement;
     formGroup: FormGroup;
 
+    @Output() onSave = new EventEmitter<BaseElement>();
+    
+    onElemChanged() {
+        console.log('saved:' + this.element);
+        this.onSave.emit(this.element);
+    }
 }
 

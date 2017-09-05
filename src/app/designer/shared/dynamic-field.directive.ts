@@ -2,6 +2,8 @@ import { ComponentFactoryResolver,
     ComponentRef,
     Directive,
     Input,
+    Output,
+    EventEmitter,
     OnChanges,
     OnInit,
     Type,
@@ -31,7 +33,7 @@ const components = {
 export class DynamicFieldDirective implements OnInit, OnChanges, DynamicField {
     @Input() element: BaseElement;
     @Input() formGroup: FormGroup;
-    
+    @Output() onSave: EventEmitter<BaseElement> = new EventEmitter<BaseElement>();
     component: ComponentRef<DynamicField>;
 
     constructor(private resolver: ComponentFactoryResolver,
@@ -41,6 +43,7 @@ export class DynamicFieldDirective implements OnInit, OnChanges, DynamicField {
         if (this.component) {
             this.component.instance.element = this.element;
             this.component.instance.formGroup = this.formGroup;
+            this.component.instance.onSave = this.onSave;            
         }
     }
 
@@ -58,5 +61,6 @@ export class DynamicFieldDirective implements OnInit, OnChanges, DynamicField {
         this.component = this.container.createComponent(component);
         this.component.instance.element = this.element;
         this.component.instance.formGroup = this.formGroup;
+        this.component.instance.onSave = this.onSave;
     }
 }

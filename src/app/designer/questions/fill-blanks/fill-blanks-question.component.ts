@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { DynamicField } from './../../shared/models/dynamic-field.interface';
 import { BaseElement } from './../../../models/base-element';
 import { FormGroup } from '@angular/forms';
@@ -11,4 +11,6 @@ import { FormGroup } from '@angular/forms';
 export class FillBlanksQuestionComponent implements DynamicField {
     element: BaseElement;
     formGroup: FormGroup;
+    @Output() onSave = new EventEmitter<BaseElement>();
+    
 }

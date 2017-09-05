@@ -10,9 +10,11 @@ import {
 
 import { FileDialogComponent } from './file-dialog/file-dialog.component';
 import { StartPageComponent } from './start-page/start-page.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     imports: [
+        CommonModule,
         MdCoreModule,
         MdCardModule,
         MdButtonModule,

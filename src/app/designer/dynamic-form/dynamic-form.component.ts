@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { BaseElement } from '../../models/base-element';
 import { ElementType } from '../../models/element-type';
 import { NewElementService } from './../shared/services/new-element.service';
 import { Subscription } from 'rxjs/Subscription';
 import { ElementFactoryService } from './../../core/services/element-factory.service';
+import { ProjectStore } from '../../store/project-store';
 
 @Component({
     selector: 'dynamic-form',
@@ -20,7 +21,8 @@ export class DynamicFormComponent implements OnInit, OnDestroy {
     constructor(
         private formBuilder: FormBuilder,
         private newElementService: NewElementService,
-        private elementFactoryService: ElementFactoryService) {
+        private elementFactoryService: ElementFactoryService,
+        public store: ProjectStore) {
         this.newElementSubscription = this.newElementService.newElementAddedObservable.subscribe(newElementType => {
             this.addNewElement(newElementType);
         });
@@ -49,7 +51,15 @@ export class DynamicFormComponent implements OnInit, OnDestroy {
         let element = this.elementFactoryService.create(elementType, nextId);
 
         this.elements.push(element);
+
+        this.store.addElement(element);
         this.formGroup.addControl(element.name, this.formBuilder.control(''));
+
+        console.log(this.store.getAllElements());
+    }
+
+    onQuestionSaved(updated: BaseElement) {
+        this.store.updateElement(updated);
     }
 
     ngOnDestroy() {
