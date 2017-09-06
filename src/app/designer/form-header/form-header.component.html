@@ -1,9 +1,9 @@
 <div style="border-bottom:0.5pt dashed black">
 
     <div style="text-align: center">
-        <h2><editable-text [value]="'Enter test name here'" [placeholderText]="'Please enter test\'s title'"></editable-text></h2>
+        <h2><editable-text (onSave)="update($event)" [(value)]="project.title" [placeholderText]="'Please enter test\'s title'"></editable-text></h2>
         <hr style="margin: 0" />
     </div>
-    <h3><editable-text [value]="'Name:'" [placeholderText]="'Header Line 1'"></editable-text></h3>
-    <h3><editable-text [value]="'Date:'" [placeholderText]="'Header Line 2'"></editable-text></h3>
+    <h3><editable-text [(value)]="project.headerLine1" (onSave)="update($event)" [placeholderText]="'Header Line 1'"></editable-text></h3>
+    <h3><editable-text [(value)]="project.headerLine2" (onSave)="update($event)" [placeholderText]="'Header Line 2'"></editable-text></h3>
 </div>

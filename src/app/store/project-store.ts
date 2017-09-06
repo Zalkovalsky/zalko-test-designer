@@ -28,7 +28,15 @@ export class ProjectStore {
     removeElement(element: BaseElement) {
         let allElements = this.elementsSubject.getValue();
 
-        this.elementsSubject.next(allElements.filter(x => x.questionId !== element.questionId));
+        let filtered = allElements.filter(x => x.questionId !== element.questionId);
+
+        filtered.map(x => {
+            if (x.questionId > element.questionId) {
+                x.questionId--;
+            }
+        });
+
+        this.elementsSubject.next(filtered);
     }
 
     updateElement(element: BaseElement) {

@@ -6,13 +6,20 @@
     <md-divider></md-divider>    
     <h3 md-subheader>Fonts</h3>            
     <md-list-item>
-        <md-input-container>
-            <input mdInput type="number" placeholder="Test header font size">
-        </md-input-container>
+            <md-input-container>
+                    <input mdInput type="number" 
+                        placeholder="Test header font size" 
+                        [(ngModel)]="project.headerFontSize" 
+                        (ngModelChange)="update($event)"
+                        [ngModelOptions]="{standalone: true}">
+                </md-input-container>
     </md-list-item>
     <md-list-item>
         <md-input-container>
-            <input mdInput type="number" placeholder="Test body font size" [(ngModel)]="gridElementsSize" (ngModelChange)="onGridFontSize($event)"
+            <input mdInput type="number" 
+                placeholder="Test body font size" 
+                [(ngModel)]="project.elementsFontSize" 
+                (ngModelChange)="update($event)"
                 [ngModelOptions]="{standalone: true}">
         </md-input-container>
     </md-list-item>

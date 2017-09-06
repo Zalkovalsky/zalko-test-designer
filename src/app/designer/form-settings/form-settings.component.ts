@@ -1,5 +1,7 @@
 import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { FontSizeBroadcasterService } from './../shared/services/font-size-broadcaster.serivce';
+import { ProjectStore } from '../../store/project-store';
+import { Project } from '../../models/project';
 
 @Component({
     selector: 'form-settings',
@@ -7,14 +9,14 @@ import { FontSizeBroadcasterService } from './../shared/services/font-size-broad
 })
 export class FormSettingsComponent {
 
-    gridElementsSize = 18;
+    project: Project;
 
-    constructor(private fontSizeBroadcasterService: FontSizeBroadcasterService) { }
+    constructor(private fontSizeBroadcasterService: FontSizeBroadcasterService, private store: ProjectStore) {
+        this.project = store.getCurrent();
+     }
 
-    onGridFontSize() {
-        this.changeSize();
-    }
-    changeSize() {
-        this.fontSizeBroadcasterService.changeGridElementsFontSize(this.gridElementsSize);
+    update(event: any) {
+        this.store.setCurrent(this.project);
+        console.log(this.project);
     }
 }

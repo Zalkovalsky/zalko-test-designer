@@ -43,7 +43,7 @@ export class DynamicFormComponent implements OnInit, OnDestroy {
 
     addNewElement(elementType: ElementType) {
         let nextId = 1;
-
+    // TODO: remove elements array and move creation to the factory
         if (this.elements.length > 0) {
             nextId = Math.max(...this.elements.map(x => x.questionId)) + 1;
         }
