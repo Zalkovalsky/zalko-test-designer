@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DesignerGridComponent {
     print() {
-
+        window.print();
     }
 
     quit() {

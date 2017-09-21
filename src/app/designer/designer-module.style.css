@@ -62,3 +62,30 @@ textarea {
     top:0; 
     right: 0;
 }
+
+@media print {
+    body { margin: 0; padding: 0;}
+    md-toolbar { display: none; }
+    .element-delete-button {display: none;}
+    new-element { display: none; }
+    md-card-header { display: none; }
+    .designer-card-container {
+        width:210mm;
+        margin:0;
+    }
+    #designer-grid-container {
+        width: 210mm;         
+    }
+    #designer-form-container { 
+        min-height: 0;
+        display: block;
+        border: 0;
+    }
+    .editable-text { border: 0; }
+    .editable-multiline-text { border: 0; }
+    .element-container{
+        page-break-inside: avoid;
+        border: 0;
+    }
+    button { display: none; }
+}
