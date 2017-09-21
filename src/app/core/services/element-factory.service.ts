@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BaseElement } from '../../models/base-element';
 import { ElementType } from '../../models/element-type';
+import { Option } from '../../models/option';
 
 export class ElementFactoryService {
     create(type: ElementType, id: number): BaseElement {
@@ -13,6 +14,10 @@ export class ElementFactoryService {
             placeholderText: 'Please edit me',
             questionText: 'Please edit me'
         });
+
+        if (type === ElementType.SingleSelection) {
+            element.options = [new Option(0, 'Please edit me')];
+        }
 
         return element;
     }

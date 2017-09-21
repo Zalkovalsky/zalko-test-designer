@@ -13,8 +13,6 @@ import { ProjectStore } from '../../store/project-store';
 })
 export class DynamicFormComponent implements OnInit, OnDestroy {
 
-    elements: any[] = [];
-
     formGroup: FormGroup;
     newElementSubscription: Subscription;
 
@@ -23,6 +21,7 @@ export class DynamicFormComponent implements OnInit, OnDestroy {
         private newElementService: NewElementService,
         private elementFactoryService: ElementFactoryService,
         public store: ProjectStore) {
+
         this.newElementSubscription = this.newElementService.newElementAddedObservable.subscribe(newElementType => {
             this.addNewElement(newElementType);
         });
@@ -35,7 +34,7 @@ export class DynamicFormComponent implements OnInit, OnDestroy {
     createFormGroup(): FormGroup {
         const formGroup = this.formBuilder.group([]);
 
-        this.elements
+        this.store.getAllElements()
             .forEach(element => formGroup.addControl(element.name, this.formBuilder.control(''))); // TODO: default value
 
         return formGroup;
@@ -43,19 +42,18 @@ export class DynamicFormComponent implements OnInit, OnDestroy {
 
     addNewElement(elementType: ElementType) {
         let nextId = 1;
-    // TODO: remove elements array and move creation to the factory
-        if (this.elements.length > 0) {
-            nextId = Math.max(...this.elements.map(x => x.questionId)) + 1;
+
+        let all = this.store.getAllElements();
+
+        // TODO: remove elements array and move creation to the factory
+        if (all.length > 0) {
+            nextId = Math.max(...all.map(x => x.questionId)) + 1;
         }
 
         let element = this.elementFactoryService.create(elementType, nextId);
 
-        this.elements.push(element);
-
         this.store.addElement(element);
         this.formGroup.addControl(element.name, this.formBuilder.control(''));
-
-        console.log(this.store.getAllElements());
     }
 
     onQuestionSaved(updated: BaseElement) {
