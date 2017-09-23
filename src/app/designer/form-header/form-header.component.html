@@ -1,9 +1,9 @@
 <div style="border-bottom:0.5pt dashed black">
 
     <div style="text-align: center">
-        <h2 id="test-header-title" [ngStyle]="{'fontSize': project.headerFontSize+'px'}"><editable-text (onSave)="update($event)" [(value)]="project.title" [placeholderText]="'Please enter test\'s title'"></editable-text></h2>
+        <h2 id="test-header-title" [style.font-size.pt]="project.headerFontSize"><editable-text (onSave)="update($event)" [(value)]="project.title" [placeholderText]="'Please enter test\'s title'"></editable-text></h2>
         <hr style="margin: 0" />
     </div>
-    <h3 class="test-header-subtitle"><editable-text [(value)]="project.headerLine1" (onSave)="update($event)" [placeholderText]="'Header Line 1'"></editable-text></h3>
-    <h3 class="test-header-subtitle"><editable-text [(value)]="project.headerLine2" (onSave)="update($event)" [placeholderText]="'Header Line 2'"></editable-text></h3>
+    <h3 class="test-header-subtitle" [style.font-size.pt]="project.subHeaderFontSize"><editable-text [(value)]="project.headerLine1" (onSave)="update($event)" [placeholderText]="'Header Line 1'"></editable-text></h3>
+    <h3 class="test-header-subtitle" [style.font-size.pt]="project.subHeaderFontSize"><editable-text [(value)]="project.headerLine2" (onSave)="update($event)" [placeholderText]="'Header Line 2'"></editable-text></h3>
 </div>

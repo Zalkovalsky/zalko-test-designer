@@ -16,6 +16,15 @@
     </md-list-item>
     <md-list-item>
         <md-input-container>
+                <input mdInput type="number" 
+                    placeholder="Test header subtitle font size" 
+                    [(ngModel)]="project.subHeaderFontSize" 
+                    (ngModelChange)="update($event)"
+                    [ngModelOptions]="{standalone: true}">
+            </md-input-container>
+    </md-list-item>
+    <md-list-item>
+        <md-input-container>
             <input mdInput type="number" 
                 placeholder="Test body font size" 
                 [(ngModel)]="project.elementsFontSize" 
