@@ -22,7 +22,6 @@ export class NewElementComponent implements OnInit {
 
     addSelected() {
         if (!this.selectedType) {
-            console.error('No type selected');
             return;
         }
 

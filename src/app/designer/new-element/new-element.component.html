@@ -1,22 +1,23 @@
-    <md-card>
-        <md-card-header>
-            <md-card-title>
-                <h1>Add new element</h1>
-            </md-card-title>
-            <md-card-subtitle>
-                <h3>Select an option and press 'Add'</h3>
-            </md-card-subtitle>
-        </md-card-header>
-        <md-card-content>
-            <form style="margin-top: 10pt">
-                <md-select style="width: 60%" placeholder="Element type" [(ngModel)]="selectedType" name="type">
-                    <md-option *ngFor="let type of availableTypes" [value]="type">
-                        {{type.value}}
-                    </md-option>
-                </md-select>
-            </form>
-        </md-card-content>
-        <md-card-actions>
-            <button md-button type="button" (click)="addSelected()">Add</button>
-        </md-card-actions>
-    </md-card>
+<md-card>
+    <md-card-header>
+        <md-card-title>
+            <h2>Add new element</h2>
+        </md-card-title>
+        <md-card-subtitle>
+            <h3>Select an option and press 'Add'</h3>
+        </md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+        <form style="margin-top: 10pt">
+            <md-select style="width: 60%" placeholder="Element type" [(ngModel)]="selectedType" name="type">
+                <md-option *ngFor="let type of availableTypes" [value]="type">
+                    {{type.value}}
+                </md-option>
+            </md-select>
+        </form>
+    </md-card-content>
+    <md-card-actions>
+        <button md-button type="button" (click)="addSelected()">Add</button>
+
+    </md-card-actions>
+</md-card>

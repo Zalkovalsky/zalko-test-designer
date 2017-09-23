@@ -7,6 +7,6 @@
             (onSave)="update($event)"
             ></editable-text>
     </div>
-    <div style="flex: 1 100%; border-bottom:solid 1pt black;height: 15pt"></div>
+    <div class="answer-placeholder" [style.height.pt]="fontSize"></div>
     <button type="button" class="element-delete-button" md-icon-button (click)="delete($event)"><md-icon>delete</md-icon></button>    
 </div>

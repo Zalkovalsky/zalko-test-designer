@@ -2,15 +2,9 @@
     <div class="element-header">
         <span>{{element.questionId}}.</span>
         <editable-text [(value)]="element.questionText" [placeholderText]="'Enter question text'" (onSave)="update($event)"></editable-text>
-    </div>
-    <div class="element-body" style="display:flex; align-content: stretch">
-        <editable-text 
-            style="flex: 1  0 auto"
-            (onSave)="shuffleText($event)"
-            [(value)]="element.additionalText" 
-            [placeholderText]="element.placeholderText"></editable-text>
-        
-        <div style="flex: 1 100%; margin-left: 5pt; border-bottom: 1pt solid black"></div>
-    </div>
-    <button type="button" class="element-delete-button" md-icon-button (click)="delete($event)"><md-icon>delete</md-icon></button>    
+    </div>  
+    <editable-text (onSave)="shuffleText($event)" [(value)]="element.additionalText" [placeholderText]="element.placeholderText"></editable-text>
+
+    <div class="answer-placeholder" [style.height.pt]="fontSize"></div>
+    <button type="button" class="element-delete-button" md-icon-button (click)="delete($event)"><md-icon>delete</md-icon></button>
 </div>

@@ -10,7 +10,8 @@ import { Project } from '../../models/project';
 
 @Component({
     selector: 'dynamic-form',
-    templateUrl: './dynamic-form.component.html'
+    templateUrl: './dynamic-form.component.html',
+    styleUrls: ['./../designer-module.style.css']
 })
 export class DynamicFormComponent implements OnInit, OnDestroy {
 

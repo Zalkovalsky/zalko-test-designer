@@ -13,7 +13,7 @@ export class Project {
     
     headerFontSize = 24;
     subHeaderFontSize = 18;
-    elementsFontSize = 16;
+    elementsFontSize = 14;
 }
 
 export default Project;
