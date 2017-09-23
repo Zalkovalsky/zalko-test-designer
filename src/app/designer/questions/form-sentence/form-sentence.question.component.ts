@@ -12,6 +12,7 @@ import { CollectionHelperService } from './../../../core/services/collection-hel
 export class FormSentenceQuestionComponent implements DynamicField {
     element: BaseElement;
     formGroup: FormGroup;
+    fontSize: number;
     @Output() onSave = new EventEmitter<BaseElement>();
     @Output() onDelete = new EventEmitter<BaseElement>();
 

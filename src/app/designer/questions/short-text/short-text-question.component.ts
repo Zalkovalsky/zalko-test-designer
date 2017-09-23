@@ -11,7 +11,7 @@ import { FormGroup } from '@angular/forms';
 export class ShortTextQuestionComponent implements DynamicField {
     element: BaseElement;
     formGroup: FormGroup;
-
+    fontSize: number;
     @Output() onSave = new EventEmitter<BaseElement>();
     @Output() onDelete = new EventEmitter<BaseElement>();
 

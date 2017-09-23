@@ -14,5 +14,5 @@
 </div>
 
 <ng-template #readOnly>
-    <adjustable-text-field class="editable-text" (click)="edit()" [text]="value"></adjustable-text-field>
+    <span class="editable-text" (click)="edit()">{{value}}</span>
 </ng-template>

@@ -11,7 +11,8 @@ import { Option } from '../../../models/option';
 export class SingleSelectionQuestionComponent implements DynamicField {
     element: BaseElement;
     formGroup: FormGroup;
-
+    fontSize: number;
+    
     @Output() onSave = new EventEmitter<BaseElement>();
     @Output() onDelete = new EventEmitter<BaseElement>();
 

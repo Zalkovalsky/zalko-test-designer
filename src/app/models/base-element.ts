@@ -39,7 +39,7 @@ export class BaseElement implements Movable {
     removeOption(option: Option) {
         let index = this.options.indexOf(option);
 
-        if (index !== -1) {
+        if (index >= 0) {
             this.options.splice(index, 1);
         }
     }

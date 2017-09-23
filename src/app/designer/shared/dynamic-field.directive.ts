@@ -35,6 +35,7 @@ const components = {
 export class DynamicFieldDirective implements OnInit, OnChanges, DynamicField {
     @Input() element: BaseElement;
     @Input() formGroup: FormGroup;
+    @Input() fontSize: number;
     @Output() onSave: EventEmitter<BaseElement> = new EventEmitter<BaseElement>();
     @Output() onDelete = new EventEmitter<BaseElement>();
 
@@ -49,6 +50,7 @@ export class DynamicFieldDirective implements OnInit, OnChanges, DynamicField {
             this.component.instance.formGroup = this.formGroup;
             this.component.instance.onSave = this.onSave;
             this.component.instance.onDelete = this.onDelete;
+            this.component.instance.fontSize = this.fontSize;
         }
     }
 
@@ -68,5 +70,6 @@ export class DynamicFieldDirective implements OnInit, OnChanges, DynamicField {
         this.component.instance.formGroup = this.formGroup;
         this.component.instance.onSave = this.onSave;
         this.component.instance.onDelete = this.onDelete;
+        this.component.instance.fontSize = this.fontSize;
     }
 }

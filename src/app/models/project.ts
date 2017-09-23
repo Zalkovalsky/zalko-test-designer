@@ -10,8 +10,8 @@ export class Project {
     headerLine2: string;
 
     useTwoColumns: boolean;
-    elementsFontSize: number = 18;
-    headerFontSize: number = 24;
+    elementsFontSize = 18;
+    headerFontSize = 24;
 }
 
 export default Project;

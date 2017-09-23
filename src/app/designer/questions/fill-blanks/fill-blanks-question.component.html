@@ -1,4 +1,4 @@
-<div class="element-container" [formGroup]="formGroup">
+<div class="element-container" [formGroup]="formGroup" [style.font-size.pt]="fontSize">
     <div class="element-header">
         <span>{{element.questionId}}.</span>
         <editable-text [(value)]="element.questionText" [placeholderText]="element.placeholderText" (onSave)="update($event)"></editable-text>

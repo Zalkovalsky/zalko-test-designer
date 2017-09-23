@@ -1,4 +1,4 @@
-<div class="element-container">
+<div class="element-container" [style.font-size.pt]="fontSize">
     <div class="element-header">
         <span>{{element.questionId}}.</span>
         <editable-text [(value)]="element.questionText" [placeholderText]="'Enter question text'" (onSave)="update($event)"></editable-text>

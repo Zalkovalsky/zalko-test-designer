@@ -6,6 +6,7 @@ import { NewElementService } from './../shared/services/new-element.service';
 import { Subscription } from 'rxjs/Subscription';
 import { ElementFactoryService } from './../../core/services/element-factory.service';
 import { ProjectStore } from '../../store/project-store';
+import { Project } from '../../models/project';
 
 @Component({
     selector: 'dynamic-form',
@@ -15,6 +16,7 @@ export class DynamicFormComponent implements OnInit, OnDestroy {
 
     formGroup: FormGroup;
     newElementSubscription: Subscription;
+    project: Project;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -25,6 +27,7 @@ export class DynamicFormComponent implements OnInit, OnDestroy {
         this.newElementSubscription = this.newElementService.newElementAddedObservable.subscribe(newElementType => {
             this.addNewElement(newElementType);
         });
+        this.project = store.getCurrent();
     }
 
     ngOnInit(): void {
@@ -45,7 +48,6 @@ export class DynamicFormComponent implements OnInit, OnDestroy {
 
         let all = this.store.getAllElements();
 
-        // TODO: remove elements array and move creation to the factory
         if (all.length > 0) {
             nextId = Math.max(...all.map(x => x.questionId)) + 1;
         }
