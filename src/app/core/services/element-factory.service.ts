@@ -3,6 +3,7 @@ import { BaseElement } from '../../models/base-element';
 import { ElementType } from '../../models/element-type';
 import { Option } from '../../models/option';
 
+@Injectable()
 export class ElementFactoryService {
     create(type: ElementType, id: number): BaseElement {
 

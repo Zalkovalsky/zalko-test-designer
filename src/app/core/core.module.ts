@@ -3,6 +3,8 @@ import { NgModule, Optional, SkipSelf, ModuleWithProviders } from '@angular/core
 import { CollectionHelperService } from './services/collection-helper.service';
 import { ElementFactoryService } from './services/element-factory.service';
 import { ElementTypeService } from './services/element-type.service';
+import { ProjectService } from './services/project.service';
+
 @NgModule({
 })
 export class CoreModule {
@@ -12,7 +14,8 @@ export class CoreModule {
             providers: [
                 CollectionHelperService,
                 ElementFactoryService,
-                ElementTypeService
+                ElementTypeService,
+                ProjectService
             ]
         };
     }

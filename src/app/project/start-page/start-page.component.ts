@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MdDialog } from '@angular/material';
 import { FileDialogComponent } from './../file-dialog/file-dialog.component';
-import { ProjectStore } from '../../store/project-store';
 import { Project } from '../../models/project';
+import { ProjectService } from '../../core/services/project.service';
 
 @Component({
     selector: 'start-page',
@@ -11,24 +11,22 @@ import { Project } from '../../models/project';
     styleUrls: ['./../project.module.styles.css']
 })
 export class StartPageComponent {
-    constructor(private router: Router, private dialog: MdDialog, private store: ProjectStore) { }
+    constructor(private router: Router, private dialog: MdDialog, private projectService: ProjectService) { }
 
     startNew() {
-        let project = new Project();
-        project.title = 'Sample';
-        project.headerLine1 = 'Name';
-        project.headerLine2 = 'Date';
-        project.elementsFontSize = 20;
-        project.headerFontSize = 26;
-        this.store.setCurrent(project);
-        
-        this.router.navigateByUrl('designer');
+        this.projectService.startNew();
+        this.toDesigner();
     }
 
     loadProject() {
         let dialogRef = this.dialog.open(FileDialogComponent);
         dialogRef.afterClosed().subscribe(result => {
-            console.log('closed dialog, result: ' + result);
+            this.projectService.loadFromJson(result);
+            this.toDesigner();
         });
+    }
+
+    private toDesigner() {
+        this.router.navigateByUrl('designer');
     }
 }

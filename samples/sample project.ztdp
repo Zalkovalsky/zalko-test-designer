@@ -1,12 +1,70 @@
 ﻿{
-	"title": "Projekt ze znakami ąćłóźżć",
-	"createdAt": "2017-08-29T18:30:00",
-	elements = [
+    "projectId": 1,
+    "createdAt": "2017-10-04",
+    "lastUpdatedAt": "2017-10-04T15:00:00",
+    "title": "Loaded ąęłćźż",
+    "headerLine1": "header 1 loaded",
+    "headerLine2": "header 2 loaded",
+    "headerFontSize": 40,
+    "subHeaderFontSize": 22,
+    "elementsFontSize": 14,
+	"elements": [
 		{
-			"name": "short1",
-			"type": 1,
-			"text": "Edit me",
-			"id": 1
+			"questionId": 1,
+    		"questionText": "Sample loaded text",
+    		"displayOrder": 1,
+    		"elementType": "Short Text",
+    		"name": "short_text1",
+    		"row": 1,
+    		"column": 1,
+    		"additionalText": "Additional text",
+    		"options": [],
+    		"placeholderText": "Loaded placeholder"
+		},
+		{
+			"questionId": 2,
+    		"questionText": "Sample loaded text 2 ",
+    		"displayOrder": 2,
+    		"elementType": "Single Selection",
+    		"name": "ss_1",
+    		"row": 2,
+    		"column": 1,
+    		"additionalText": "Additional text",
+    		"options": [
+					{
+						"index": 1,
+						"value": "Loaded val1"
+					},
+					{
+						"index": 2,
+						"value": "Loaded val2"
+					}
+				],
+    		"placeholderText": "Loaded placeholder"
+		},
+		{
+			"questionId": 3,
+    		"questionText": "Fill up blanks please",
+    		"displayOrder": 3,
+    		"elementType": "Fill Up Blanks",
+    		"name": "fup_1",
+    		"row": 3,
+    		"column": 1,
+    		"additionalText": "Please fill up blanks _ and here: _.",
+    		"options": [],
+    		"placeholderText": "Loaded placeholder"
+		},
+		{
+			"questionId": 4,
+    		"questionText": "Form sentence now",
+    		"displayOrder": 4,
+    		"elementType": "Form Sentence",
+    		"name": "fs_1",
+    		"row": 4,
+    		"column": 1,
+    		"additionalText": "Try to make this sentence right",
+    		"options": [],
+    		"placeholderText": "Loaded placeholder"
 		}
 	]
 }

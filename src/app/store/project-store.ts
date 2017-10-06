@@ -15,6 +15,7 @@ export class ProjectStore {
 
     setCurrent(project: Project): void {
         this.projectSubject.next(project);
+        this.elementsSubject.next(project.elements);
     }
 
     getCurrent(): Project {
@@ -22,28 +23,31 @@ export class ProjectStore {
     }
 
     addElement(element: BaseElement) {
-        this.elementsSubject.next([...this.elementsSubject.getValue(), element]);
+        let project = this.projectSubject.getValue();
+        project.elements = [...project.elements, element];
+
+        this.elementsSubject.next([...project.elements]);
     }
 
     removeElement(element: BaseElement) {
-        let allElements = this.elementsSubject.getValue();
+        let project = this.projectSubject.getValue();
 
-        let filtered = allElements.filter(x => x.questionId !== element.questionId);
-
-        filtered.map(x => {
+        project.elements
+        .filter(x => x.questionId !== element.questionId)
+        .map(x => {
             if (x.questionId > element.questionId) {
                 x.questionId--;
             }
         });
 
-        this.elementsSubject.next(filtered);
+        this.elementsSubject.next([...project.elements]);
     }
 
     updateElement(element: BaseElement) {
-        let allElements = this.elementsSubject.getValue();
-        let indexOf = allElements.indexOf(element);
-        allElements[indexOf] = element;
-        this.elementsSubject.next([...allElements]);
+        let project = this.projectSubject.getValue();
+        let elementIndex = project.elements.indexOf(element);
+        project.elements[elementIndex] = element;
+        this.elementsSubject.next([...project.elements]);
     }
 
     getAllElements() {
