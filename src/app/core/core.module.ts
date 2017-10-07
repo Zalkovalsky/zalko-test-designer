@@ -4,6 +4,7 @@ import { CollectionHelperService } from './services/collection-helper.service';
 import { ElementFactoryService } from './services/element-factory.service';
 import { ElementTypeService } from './services/element-type.service';
 import { ProjectService } from './services/project.service';
+import { DialogService } from './services/dialog-service';
 
 @NgModule({
 })
@@ -15,7 +16,8 @@ export class CoreModule {
                 CollectionHelperService,
                 ElementFactoryService,
                 ElementTypeService,
-                ProjectService
+                ProjectService,
+                DialogService
             ]
         };
     }

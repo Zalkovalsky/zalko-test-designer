@@ -1,8 +1,7 @@
-const {dialog} = require('electron').remote
-
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { ProjectService } from '../../core/services/project.service';
+import { DialogService } from '../../core/services/dialog-service';
 
 @Component({
     selector: 'designer-grid',
@@ -11,29 +10,44 @@ import { ProjectService } from '../../core/services/project.service';
 })
 export class DesignerGridComponent {
 
-    constructor(private projectService: ProjectService, private location: Location) { }
+    constructor(
+        private projectService: ProjectService,
+        private location: Location,
+        private dialogService: DialogService) { }
 
     print() {
         window.print();
     }
 
     quit() {
-        let isConfirmed = confirm('Do you want to quit designer?');
+        this.dialogService.confirmAsync('Do you want to quit designer?')
+            .then((quitConfirmed) => {
+                if (!quitConfirmed) {
+                    return;
+                }
+                this.dialogService.confirmAsync('Do you wish do save your changes?')
+                    .then((save) => {
+                        if (save) {
+                            return this.projectService.saveAsync();
+                        }
+                        return Promise.resolve(true);
 
-        if (!isConfirmed) {
-            return;
-        }
-
-        let saveChanges = confirm('Do you wish to save your changes?');
-
-        if (saveChanges) {
-            this.projectService.save();
-        }
-
-        this.location.back();
+                    }).then(() => {
+                        this.location.back();
+                    }, (reason) => {
+                        this.onSaveFailed(reason);
+                    });
+            });
     }
 
     save() {
-        this.projectService.save();
+        this.projectService.saveAsync()
+            .catch((reason) => {
+                this.onSaveFailed(reason);
+            });
+    }
+
+    private onSaveFailed(reason: any) {
+        alert('Failed to save, reason: ' + reason);
     }
 }

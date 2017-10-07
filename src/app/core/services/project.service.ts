@@ -43,25 +43,35 @@ export class ProjectService {
         this.store.setCurrent(project);
     }
 
-    save() {
-        if (!dialog) {
-            return;
-        }
+    saveAsync(): Promise<boolean> {
+        return new Promise<boolean>((resolverFn) => {
+            if (!dialog) {
+                resolverFn(false);
+            }
 
-        dialog.showSaveDialog(null, {
-            title: 'Save',
-            filters: [{name: '', extensions: ['ztdp']}]
-        }, (result) => {
-            this.saveToPath(result);
+            dialog.showSaveDialog(null, {
+                title: 'Save',
+                filters: [{ name: '', extensions: ['ztdp'] }]
+            }, (result) => {
+                this.saveToPathAsync(result)
+                    .then((s) => {
+                        resolverFn(s);
+                });
+            });
+
         });
     }
 
-    private saveToPath(path: string) {
-        if (!path) {
-            return;
-        }
+    private saveToPathAsync(path: string): Promise<boolean> {
 
-        let json = JSON.stringify(this.store.getCurrent());
-        fs.writeFileSync(path, json, 'UTF-8');
+        return new Promise<boolean>((resolverFn) => {
+            if (!path) {
+                resolverFn(false);
+            }
+
+            let json = JSON.stringify(this.store.getCurrent());
+            fs.writeFileSync(path, json, 'UTF-8');
+            resolverFn(true);
+        });
     }
 }
