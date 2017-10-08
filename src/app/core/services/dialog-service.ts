@@ -26,4 +26,20 @@ export class DialogService {
 
         return promise;
     }
+
+    showSaveDialogAsync(allowedExtensions: string[]): Promise<string> {
+        return new Promise<string>((resolverFn, rejectFn) => {
+            if (!allowedExtensions || allowedExtensions.length < 1) {
+                rejectFn('At least one allowed extension has to be specified');
+                return;
+            }
+
+            dialog.showSaveDialog(null, {
+                title: 'Save',
+                filters: [{ name: '', extensions: allowedExtensions }]
+            }, (result) => {
+                resolverFn(result);
+            });
+        });
+    }
 };

@@ -6,7 +6,6 @@ import { ProjectStore } from '../../store/project-store';
 
 // Only available in electron
 const electronRemote = require('electron').remote;
-const { dialog } = electronRemote;
 const electronFs = electronRemote.require('fs');
 import fs = require('fs');
 
@@ -43,35 +42,26 @@ export class ProjectService {
         this.store.setCurrent(project);
     }
 
-    saveAsync(): Promise<boolean> {
-        return new Promise<boolean>((resolverFn) => {
-            if (!dialog) {
-                resolverFn(false);
+    saveAsync(filePath: string): Promise<void> {
+        return new Promise<void>((resolverFn, rejectFn) => {
+            if (!filePath) {
+                rejectFn('File path has to be specified');
             }
 
-            dialog.showSaveDialog(null, {
-                title: 'Save',
-                filters: [{ name: '', extensions: ['ztdp'] }]
-            }, (result) => {
-                this.saveToPathAsync(result)
-                    .then((s) => {
-                        resolverFn(s);
-                });
-            });
-
+            this.saveToPathAsync(filePath)
+                .then(() => resolverFn());
         });
     }
 
-    private saveToPathAsync(path: string): Promise<boolean> {
-
-        return new Promise<boolean>((resolverFn) => {
+    private saveToPathAsync(path: string): Promise<void> {
+        return new Promise<void>((resolverFn, rejectFn) => {
             if (!path) {
-                resolverFn(false);
+                rejectFn('File path has to be specified');
             }
 
             let json = JSON.stringify(this.store.getCurrent());
             fs.writeFileSync(path, json, 'UTF-8');
-            resolverFn(true);
+            resolverFn();
         });
     }
 }

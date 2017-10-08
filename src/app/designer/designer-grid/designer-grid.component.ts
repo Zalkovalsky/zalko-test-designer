@@ -25,25 +25,34 @@ export class DesignerGridComponent {
                 if (!quitConfirmed) {
                     return;
                 }
-                this.dialogService.confirmAsync('Do you wish do save your changes?')
-                    .then((save) => {
-                        if (save) {
-                            return this.projectService.saveAsync();
-                        }
-                        return Promise.resolve(true);
 
-                    }).then(() => {
-                        this.location.back();
-                    }, (reason) => {
-                        this.onSaveFailed(reason);
-                    });
-            });
+                this.confirmAndSaveAsync()
+                    .then(() => this.location.back());
+            })
+            .catch((failReason) => this.onSaveFailed(failReason));
     }
 
     save() {
-        this.projectService.saveAsync()
-            .catch((reason) => {
-                this.onSaveFailed(reason);
+        this.saveAsync()
+            .catch((failReason) => this.onSaveFailed(failReason));
+    }
+
+
+    private confirmAndSaveAsync(): Promise<void> {
+        return this.dialogService.confirmAsync('Do you wish do save your changes?')
+            .then((save) => {
+                if (save) {
+                    return this.saveAsync();
+                }
+            });
+    }
+
+    private saveAsync(): Promise<void> {
+        return this.dialogService.showSaveDialogAsync(['ztdp'])
+            .then((path) => {
+                if (path) {
+                    return this.projectService.saveAsync(path);
+                }
             });
     }
 
