@@ -22,12 +22,10 @@ import { FormHeaderComponent } from './form-header/form-header.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { DesignerGridComponent } from './designer-grid/designer-grid.component';
 import { FormSettingsComponent } from './form-settings/form-settings.component';
-import { AdjustableTextFieldComponent } from './shared/adjustable-text-field.component';
 import { EditableTextComponent } from './editable-text/editable-text.component';
 import { EditableMultilineTextComponent } from './editable-multiline-text/editable-multiline-text.component';
 
 import { NewElementService } from './shared/services/new-element.service';
-import { FontSizeBroadcasterService } from './shared/services/font-size-broadcaster.serivce';
 
 import { DynamicFieldDirective } from './shared/dynamic-field.directive';
 import { ShortTextQuestionComponent } from './questions/short-text/short-text-question.component';
@@ -55,7 +53,6 @@ import { FillBlanksQuestionComponent } from './questions/fill-blanks/fill-blanks
     ],
     declarations: [
         DynamicFieldDirective,
-        AdjustableTextFieldComponent,
         NewElementComponent,
         DynamicFormComponent,
         FormHeaderComponent,
@@ -75,8 +72,7 @@ import { FillBlanksQuestionComponent } from './questions/fill-blanks/fill-blanks
         DesignerGridComponent
     ],
     providers: [
-        NewElementService,
-        FontSizeBroadcasterService
+        NewElementService
     ],
     entryComponents: [ // for dynamic generation
         ShortTextQuestionComponent,

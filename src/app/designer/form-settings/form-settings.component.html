@@ -10,7 +10,6 @@
                     <input mdInput type="number" 
                         placeholder="Test header font size" 
                         [(ngModel)]="project.headerFontSize" 
-                        (ngModelChange)="update($event)"
                         [ngModelOptions]="{standalone: true}">
                 </md-input-container>
     </md-list-item>
@@ -19,7 +18,6 @@
                 <input mdInput type="number" 
                     placeholder="Test header subtitle font size" 
                     [(ngModel)]="project.subHeaderFontSize" 
-                    (ngModelChange)="update($event)"
                     [ngModelOptions]="{standalone: true}">
             </md-input-container>
     </md-list-item>
@@ -28,7 +26,6 @@
             <input mdInput type="number" 
                 placeholder="Test body font size" 
                 [(ngModel)]="project.elementsFontSize" 
-                (ngModelChange)="update($event)"
                 [ngModelOptions]="{standalone: true}">
         </md-input-container>
     </md-list-item>
