@@ -32,9 +32,9 @@ export class ProjectStore {
     removeElement(element: BaseElement) {
         let project = this.projectSubject.getValue();
 
-        project.elements
-        .filter(x => x.questionId !== element.questionId)
-        .map(x => {
+        project.elements = project.elements.filter(x => x.questionId !== element.questionId);
+
+        project.elements.map(x => {
             if (x.questionId > element.questionId) {
                 x.questionId--;
             }
